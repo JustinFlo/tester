@@ -46,6 +46,12 @@ h2.title::after{
     display: flex;
     flex-direction: column;
     gap: 24px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.column:hover .testimonials{
+    animation-play-state: paused;
 }
 
 .card{
@@ -79,9 +85,42 @@ h2.title::after{
     color: #667;
 }
 
-.card .profile .content{
+.card .content{
     color: #444;
     line-height: 1.5;
+}
+
+.column:nth-child(1) .testimonials{
+    animation-name: scrollUp;
+    animation-duration: 23s;
+}
+
+.column:nth-child(2) .testimonials{
+    animation-name: scrollDown;
+    animation-duration: 50s;
+}
+
+.column:nth-child(3) .testimonials{
+    animation-name: scrollUp;
+    animation-duration: 30s;
+}
+
+@keyframes scrollUp{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes scrollDown{
+    from{
+        transform: translateY(-50%);
+    }
+    to{
+        transform: translateY(0%);
+    }
 }
 
 @media(max-width: 768px){
@@ -92,6 +131,10 @@ h2.title::after{
 
     .column:nth-child(3){
        display:none;
+    }
+
+    .column:hover .testimonials{
+        animation-play-state: running;
     }
 }
 

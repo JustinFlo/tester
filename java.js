@@ -81,3 +81,10 @@ const populateColumn = (columnId) => {
     });
     
 }
+
+testimonials.sort(() => Math.random() - 0.5);
+populateColumn('column1');
+testimonials.sort(() => Math.random() - 0.5);
+populateColumn('column2');
+testimonials.sort(() => Math.random() - 0.5);
+populateColumn('column3');
