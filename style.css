@@ -1,56 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    font-family:"Quicksand", sans-serif;
-    box-sizing: border-box;
-}
-
-body{
-    background: #eef8ff;
-}
-
-footer{
-    width: 100%;
+.bgAnimation{
     position: absolute;
-    bottom: 0;
-    background: linear-gradient(to right, #011061, #0e2d00);
-    color: #fff;
-    padding: 100px 0 30px;
-    border-top-left-radius: 125px;
-    font-size: 13px;
-    line-height: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    grid-template-rows: repeat(20,1fr);
+    background: #000000;
+    filter: saturate(2);
+    overflow: hidden;
 }
 
-.row{
-    width: 85%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.col{
-    flex-basis: 25%;
-    padding: 10px;
-}
-
-.logo{
-    width: 80px;
-    margin-bottom: 30px;
-}
-
-.col li {
-    width: fit-content;
-    margin-bottom: 10px;
+.color{
+    z-index: 2;
+    filter: brightness(1.1);
+    transition: 2s ease;
     position: relative;
-    padding-left: 20px;
-    list-style: none;
-    
+    margin: 2px;
+    background: #1d1d1d;
 }
 
-a{
-    color: #fff;
-    text-decoration: none;
+.color:hover{
+    background: #00ffdd;
+    transition-duration: 0s;
+}
+
+.backgroundAnim{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #c9240e;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #c9240e, 0 0 40px #c9240e, 0 0 60px #c9240e, 0 0 80px #c9240e, 0 0 100px #c9240e, 0 0 120px #c9240e, 0 0 140px #c9240e, 0 0 160px #c9240e;
+    filter: blur(30px);
+    animation: animBack 9s linear infinite alternate;
+    z-index: 1;
+    transform: rotate(0px) translateY(-50%); /* Adjusted transform */
+}
+
+@keyframes animBack {
+    0%{
+        top: -10%;
+    }
+    
+    50%{
+        top: 71%;
+    }
+    100%{
+        top: 156%;
+    }
+}
+
+
+.backgroundAnim2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #0ec3c9;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #0ec3c9, 0 0 40px #0ec3c9, 0 0 60px #0ec3c9, 0 0 80px #0ec3c9, 0 0 100px #0ec3c9, 0 0 120px #0ec3c9, 0 0 140px #0ec3c9, 0 0 160px #0ec3c9;
+    filter: blur(30px);
+    animation: animBack2 9s linear infinite alternate; /* Updated animation */
+    z-index: 1;
+     stroke-width: 20px;
+    transform: rotate(90deg) translateX(50%); /* Adjusted transform */
+}
+
+@keyframes animBack2 {
+    0% {
+        left: -60%;
+    }
+    50% {
+        left:  30%;
+       
+    }
+    100% {
+        left: 110%;
+    }
 }
