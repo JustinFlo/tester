@@ -18,12 +18,12 @@
     transition: 2s ease;
     position: relative;
     margin: 2px;
-    background: #1d1d1d;
+    background: #0c0c0c;
 }
 
 .color:hover{
-    background: #00ffdd;
-    transition-duration: 0s;
+    background: #565757;
+    transition-duration: 0.1s;
 }
 
 .backgroundAnim{
@@ -81,5 +81,65 @@
     }
     100% {
         left: 110%;
+    }
+}
+
+.backgroundAnim3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #ff00ff;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff, 0 0 80px #ff00ff, 0 0 100px #ff00ff, 0 0 120px #ff00ff, 0 0 140px #ff00ff, 0 0 160px #ff00ff;
+    filter: blur(30px);
+    animation: animBack3 9s linear infinite alternate; /* New diagonal animation */
+    z-index: 1;
+    transform: translate(-50%, -50%); /* Center alignment */
+}
+
+@keyframes animBack3 {
+    0% {
+        top: -10%;
+        left: -10%;
+    }
+    50% {
+        top: 50%;
+        left: 50%;
+    }
+    100% {
+        top: 110%;
+        left: 110%;
+    }
+}
+
+.backgroundAnim4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #00ff00;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00, 0 0 80px #00ff00, 0 0 100px #00ff00, 0 0 120px #00ff00, 0 0 140px #00ff00, 0 0 160px #00ff00;
+    filter: blur(30px);
+    animation: animBack4 9s linear infinite alternate; /* New diagonal animation */
+    z-index: 1;
+    transform: translate(-50%, -50%); /* Center alignment */
+}
+
+@keyframes animBack4 {
+    0% {
+        top: 110%;
+        left: 110%;
+    }
+    50% {
+        top: 50%;
+        left: 50%;
+    }
+    100% {
+        top: -10%;
+        left: -10%;
     }
 }
